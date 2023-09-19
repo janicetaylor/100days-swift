@@ -14,6 +14,10 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let credits = UIBarButtonItem(title: "Credits", style: .plain, target: self, action: #selector(ViewController.barButtonItemSelected))
+        self.navigationItem.rightBarButtonItem = credits
+    
+        
         let urlString :String
         
         if navigationController?.tabBarItem.tag == 0 {
@@ -37,6 +41,12 @@ class ViewController: UITableViewController {
             showError()
         }
         
+    }
+    
+    @objc func barButtonItemSelected() {
+        let alertController = UIAlertController(title: "Credits", message: "this data is from the We the People API", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        self.parent!.present(alertController, animated: true)
     }
     
     func showError() {
