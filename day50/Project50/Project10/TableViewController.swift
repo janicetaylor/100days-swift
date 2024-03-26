@@ -44,22 +44,10 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         present(picker, animated: true)
     }
             
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as? PersonTableViewCell else {
-            fatalError("unable to dequeue PersonTableViewCell")
-        }
-        
-        let person = people[indexPath.item]
-        
+    func openAlert(person: Person) {
         let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
         ac.addTextField()
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        ac.addAction(UIAlertAction(title: "Delete", style: .default) { [weak self, weak ac] _ in
-            self!.people.remove(at: indexPath.item)
-            self!.save()
-            self?.tableView.reloadData()
-        })
-        
         ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
             guard let newName = ac?.textFields?[0].text else { return }
             person.name = newName
@@ -68,7 +56,14 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         })
 
         present(ac, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as? PersonTableViewCell else {
+            fatalError("unable to dequeue PersonTableViewCell")
+        }
         
+        let person = people[indexPath.item]
         cell.personLabel.text = person.name
         let path = getDocumentsDirectory().appendingPathComponent(person.image)
         cell.personImageView.image = UIImage(contentsOfFile: path.path)
@@ -122,5 +117,8 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         self.tableView.reloadData()
         
         dismiss(animated: true)
+        openAlert(person: person)
     }
+    
+    
 }
