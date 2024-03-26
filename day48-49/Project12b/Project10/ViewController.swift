@@ -101,8 +101,8 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
         let person = Person(name: "Unknown", image: imageName)
         people.append(person)
+        save()
         collectionView.reloadData()
-        
         dismiss(animated: true)
     }
 
@@ -110,7 +110,6 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-
 
 }
 

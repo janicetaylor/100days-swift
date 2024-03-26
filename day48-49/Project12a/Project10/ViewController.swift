@@ -75,9 +75,8 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
             guard let newName = ac?.textFields?[0].text else { return }
             person.name = newName
-
-            self?.collectionView.reloadData()
             self?.save()
+            self?.collectionView.reloadData()
         })
 
         present(ac, animated: true)
@@ -95,8 +94,8 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
         let person = Person(name: "Unknown", image: imageName)
         people.append(person)
+        save()
         collectionView.reloadData()
-        
         dismiss(animated: true)
     }
 
