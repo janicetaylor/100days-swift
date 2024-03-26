@@ -42,7 +42,6 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         }
         
         present(picker, animated: true)
-        
     }
             
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
