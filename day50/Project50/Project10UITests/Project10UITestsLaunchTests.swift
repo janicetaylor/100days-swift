@@ -1,13 +1,13 @@
 //
-//  Project50UITestsLaunchTests.swift
-//  Project50UITests
+//  Project10UITestsLaunchTests.swift
+//  Project10UITests
 //
-//  Created by Janice on 4/5/22.
+//  Created by Janice on 2/19/22.
 //
 
 import XCTest
 
-class Project50UITestsLaunchTests: XCTestCase {
+class Project10UITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

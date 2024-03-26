@@ -1,13 +1,13 @@
 //
-//  Project50UITests.swift
-//  Project50UITests
+//  Project10UITests.swift
+//  Project10UITests
 //
-//  Created by Janice on 4/5/22.
+//  Created by Janice on 2/19/22.
 //
 
 import XCTest
 
-class Project50UITests: XCTestCase {
+class Project10UITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,6 +27,7 @@ class Project50UITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
