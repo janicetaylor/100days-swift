@@ -73,13 +73,15 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
 
         let ac = UIAlertController(title: "Rename person", message: nil, preferredStyle: .alert)
         ac.addTextField()
-
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-
+        ac.addAction(UIAlertAction(title: "Delete", style: .default) { [weak self, weak ac] _ in
+            self!.people.remove(at: indexPath.item)
+            self?.collectionView.reloadData()
+        })
+        
         ac.addAction(UIAlertAction(title: "OK", style: .default) { [weak self, weak ac] _ in
             guard let newName = ac?.textFields?[0].text else { return }
             person.name = newName
-
             self?.collectionView.reloadData()
         })
 
