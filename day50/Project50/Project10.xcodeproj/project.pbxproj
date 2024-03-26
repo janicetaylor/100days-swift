@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		117BB50E2BB33E6900B48CAF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BB50D2BB33E6900B48CAF /* TableViewController.swift */; };
+		117BB5102BB3439C00B48CAF /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BB50F2BB3439C00B48CAF /* PersonTableViewCell.swift */; };
+		117BB5122BB3457900B48CAF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117BB5112BB3457900B48CAF /* DetailViewController.swift */; };
 		11EF8CEF27C1CF5400610966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF8CEE27C1CF5400610966 /* AppDelegate.swift */; };
 		11EF8CF127C1CF5400610966 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF8CF027C1CF5400610966 /* SceneDelegate.swift */; };
 		11EF8CF327C1CF5400610966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF8CF227C1CF5400610966 /* ViewController.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		117BB50D2BB33E6900B48CAF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		117BB50F2BB3439C00B48CAF /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		117BB5112BB3457900B48CAF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		11EF8CEB27C1CF5400610966 /* Project10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EF8CEE27C1CF5400610966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11EF8CF027C1CF5400610966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,9 +112,12 @@
 				11EF8CEE27C1CF5400610966 /* AppDelegate.swift */,
 				11EF8CF027C1CF5400610966 /* SceneDelegate.swift */,
 				11EF8CF227C1CF5400610966 /* ViewController.swift */,
+				117BB50D2BB33E6900B48CAF /* TableViewController.swift */,
 				11EF8D2027C1D73F00610966 /* Person.swift */,
 				11EF8CF427C1CF5400610966 /* Main.storyboard */,
+				117BB5112BB3457900B48CAF /* DetailViewController.swift */,
 				11EF8D1E27C1D12300610966 /* PersonCell.swift */,
+				117BB50F2BB3439C00B48CAF /* PersonTableViewCell.swift */,
 				11EF8CF727C1CF5600610966 /* Assets.xcassets */,
 				11EF8CF927C1CF5600610966 /* LaunchScreen.storyboard */,
 				11EF8CFC27C1CF5600610966 /* Info.plist */,
@@ -265,10 +274,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				11EF8D2127C1D73F00610966 /* Person.swift in Sources */,
+				117BB50E2BB33E6900B48CAF /* TableViewController.swift in Sources */,
 				11EF8CF327C1CF5400610966 /* ViewController.swift in Sources */,
 				11EF8CEF27C1CF5400610966 /* AppDelegate.swift in Sources */,
 				11EF8D1F27C1D12300610966 /* PersonCell.swift in Sources */,
+				117BB5102BB3439C00B48CAF /* PersonTableViewCell.swift in Sources */,
 				11EF8CF127C1CF5400610966 /* SceneDelegate.swift in Sources */,
+				117BB5122BB3457900B48CAF /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
