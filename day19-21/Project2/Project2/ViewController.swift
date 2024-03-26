@@ -36,16 +36,30 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTapped(_ sender: Any) {
         var title: String
+        
+        let defaults = UserDefaults.standard
+        var previousscore = defaults.integer(forKey: "score")
 
         if (sender as! UIButton).tag == correctAnswer {
             title = "Correct"
             score += 1
+
         } else {
             title = "Wrong"
             score -= 1
         }
         
-        let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
+        save(score: score)
+        
+        var message = "Your score is \(score)."
+        var savedscore = defaults.integer(forKey: "score")
+        
+        if score > previousscore {
+            message = "New high score! Your score is \(score)."
+        }
+        
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         present(ac, animated: true)
 
@@ -58,6 +72,11 @@ class ViewController: UIViewController {
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
+    }
+    
+    func save(score:Int) {
+        let defaults = UserDefaults.standard
+        defaults.set(score, forKey: "score")
     }
 
 }
