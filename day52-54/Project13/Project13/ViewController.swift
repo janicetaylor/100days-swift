@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var currentImage: UIImage!
     var context: CIContext!
     var currentFilter: CIFilter!
+    @IBOutlet var changeFilterButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        changeFilterButton.setTitle(actionTitle, for: .normal)
         
         applyProcessing()
     }
