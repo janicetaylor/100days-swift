@@ -25,6 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
         context = CIContext()
         currentFilter = CIFilter(name: "CISepiaTone")
+        imageView.alpha = 0
     }
 
     @objc func importPicture() {
@@ -38,6 +39,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         guard let image = info[.editedImage] as? UIImage else { return }
         dismiss(animated: true)
         currentImage = image
+        
+        UIView.animate(withDuration: 1, delay: 0) {
+            self.imageView.alpha = 1
+        }
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
