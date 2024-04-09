@@ -31,12 +31,7 @@ class ViewController: UITableViewController {
     }
     
     let url = URL(string: "https://jsonplaceholder.typicode.com/users")
-    let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-        guard let data = data else { return }
-        do {
-            
-        }
-    }
+  
     
     
 
